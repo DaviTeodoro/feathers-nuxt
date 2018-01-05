@@ -15,7 +15,9 @@
     "name": "Silvestre Herrera",
     "email": "silvestre.herrera@gmail.com"
   },
-  "contributors": ["Davi Teodoro"],
+  "contributors": [
+    "Davi Teodoro"
+  ],
   "bugs": {},
   "directories": {
     "lib": "src",
@@ -39,6 +41,7 @@
     "@feathersjs/authentication-client": "^1.0.2",
     "@feathersjs/authentication-jwt": "^1.0.2",
     "@feathersjs/authentication-local": "^1.0.4",
+    "@feathersjs/authentication-oauth2": "^1.0.3",
     "@feathersjs/configuration": "^1.0.2",
     "@feathersjs/errors": "^3.2.1",
     "@feathersjs/express": "^1.1.2",
@@ -57,6 +60,8 @@
     "mongoose": "^4.11.11",
     "normalize.css": "^7.0.0",
     "nuxt": "^1.0.0-rc11",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth20": "^1.0.0",
     "serve-favicon": "^2.4.3",
     "socket.io-client": "^2.0.3",
     "winston": "^2.3.1"

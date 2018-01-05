@@ -7,16 +7,15 @@
     "max": 50
   },
   "authentication": {
-    "secret": "1ea78d001bd099a022ef6fd49218cd11d68b40fdee623ee4f79e5d6b2017feeddd118ea484436810b17f31a16d4854d3bd542100f172b92e52a9d74d50bb7daf9b01f55b40abb025ac64f299591db7e7f1386aeb61179c95f5aee90efe62a3a14eb67b10a4717fdb93c68159fc8e756ecbe1f5eb385dfde09d31bc3d37bc8f98d81e82a18fae68409c722e9b05a6a6b92d2a1d39940ce1461d0c5e595e6f9c0f97da995603a032bcf8c3737cc753ace1beb98709bfb87b5ae1c0f7a472265b55a0615f46ad389608252453863edc8abe5034d5f5a7d6cb32917ec01ca9bfdff88f600b7277dc0261cd80e0663ebed8e17066b60259ef52e90e81bf64dd57acf9",
+    "secret": "3f3f355e30b5af019f2e795d8ec55cd3fbec4684a1ae3f82f62087fe572e30dfd431c5c1dc6d52be41f3c59713f1ddfd9b206806e9ffbf2352de68a82274cac4ca909bfe3616cbb420eed14977bbb2fb82d7ab054896b8ce8faf058c7a887edc3555b28755d87292173cc89c5f15b410348a4d01f386ba065171f48788c9fc61f39a64cb0c15b2eaf59c5b9696f60848cfd940a81c64f787b4a8ab84bff5c25fe5322f99a776864d429115bb722d2ddc0df254d292a909ba7f3defe5f14ad01bda86f882852ea2f109c8db506abe67f0b5a01ba0e0a5df68d61fd99c1635d72a679fe0ac33b61aa1b1134b3de0572159a73cae684979346937a2343d2ae941ca",
     "strategies": [
-      "jwt",
-      "local"
+      "jwt"
     ],
     "path": "/authentication",
     "service": "users",
     "jwt": {
       "header": {
-        "type": "access"
+        "typ": "access"
       },
       "audience": "https://yourdomain.com",
       "subject": "anonymous",
@@ -24,10 +23,40 @@
       "algorithm": "HS256",
       "expiresIn": "1d"
     },
-    "local": {
-      "entity": "user",
-      "usernameField": "email",
-      "passwordField": "password"
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "successRedirect": "/",
+      "scope": [
+        "profile openid email"
+      ]
+    },
+    "facebook": {
+      "clientID": "your facebook client id",
+      "clientSecret": "your facebook client secret",
+      "successRedirect": "/",
+      "scope": [
+        "public_profile",
+        "email"
+      ],
+      "profileFields": [
+        "id",
+        "displayName",
+        "first_name",
+        "last_name",
+        "email",
+        "gender",
+        "profileUrl",
+        "birthday",
+        "picture",
+        "permissions"
+      ]
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
     }
   },
   "mongodb": "mongodb://localhost:27017/feathers_nuxt"

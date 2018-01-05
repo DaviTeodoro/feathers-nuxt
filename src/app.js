@@ -36,8 +36,9 @@ app.configure(rest());
 app.configure(socketio());
 
 // Configure other middleware (see `middleware/index.js`)
-app.configure(middleware);
+// Authencation must come first than nuxt middleware
 app.configure(authentication);
+app.configure(middleware);
 // Set up our services (see `services/index.js`)
 app.configure(services);
 // Configure a middleware for 404s and the error handler
