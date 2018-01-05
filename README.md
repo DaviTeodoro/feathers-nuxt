@@ -50,6 +50,10 @@ __0.1.0__
 
 - Initial release
 
+__1.0.0__
+
+- Feathers.js v3
+- 0auth login with Google and Facebook
 ## License
 
 Copyright (c) 2016
